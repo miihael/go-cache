@@ -1,5 +1,10 @@
 # go-cache
 
+[![Build Status](https://travis-ci.com/andoma-go/go-cache.svg?branch=master)](https://travis-ci.com/andoma-go/go-cache)
+[![GoDoc](https://godoc.org/github.com/andoma-go/go-cache?status.svg)](https://godoc.org/github.com/andoma-go/go-cache)
+[![Go Report Card](https://goreportcard.com/badge/github.com/andoma-go/go-cache)](https://goreportcard.com/report/github.com/andoma-go/go-cache)
+[![GitHub license](https://img.shields.io/github/license/andoma-go/go-cache.svg)](https://github.com/andoma-go/go-cache/blob/master/LICENSE)
+
 go-cache is an in-memory key:value store/cache similar to memcached that is
 suitable for applications running on a single machine. Its major advantage is
 that, being essentially a thread-safe `map[string]interface{}` with expiration
@@ -15,14 +20,14 @@ one) to recover from downtime quickly. (See the docs for `NewFrom()` for caveats
 
 ### Installation
 
-`go get github.com/andoma-go/go-cache`
+`go get github.com/andoma-go/go-cache/v2`
 
 ### Usage
 
 ```go
 import (
 	"fmt"
-	"github.com/andoma-go/go-cache"
+	"github.com/andoma-go/go-cache/v2"
 	"time"
 )
 
@@ -77,7 +82,3 @@ func main() {
 	}
 }
 ```
-
-### Reference
-
-`godoc` or [http://godoc.org/github.com/andoma-go/go-cache](http://godoc.org/github.com/andoma-go/go-cache)
