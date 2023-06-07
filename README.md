@@ -1,6 +1,6 @@
 # go-cache
 
-[![Build Status](https://travis-ci.com/andoma-go/go-cache.svg?branch=master)](https://travis-ci.com/andoma-go/go-cache)
+[![Run Tests](https://github.com/andoma-go/go-cache/actions/workflows/test.yml/badge.svg?branch=master)](https://github.com/andoma-go/go-cache/actions/workflows/test.yml)
 [![GoDoc](https://godoc.org/github.com/andoma-go/go-cache?status.svg)](https://godoc.org/github.com/andoma-go/go-cache)
 [![Go Report Card](https://goreportcard.com/badge/github.com/andoma-go/go-cache)](https://goreportcard.com/report/github.com/andoma-go/go-cache)
 [![GitHub license](https://img.shields.io/github/license/andoma-go/go-cache.svg)](https://github.com/andoma-go/go-cache/blob/master/LICENSE)
