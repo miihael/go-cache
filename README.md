@@ -1,9 +1,9 @@
 # go-cache
 
-[![Run Tests](https://github.com/andoma-go/go-cache/actions/workflows/test.yml/badge.svg?branch=master)](https://github.com/andoma-go/go-cache/actions/workflows/test.yml)
-[![GoDoc](https://godoc.org/github.com/andoma-go/go-cache?status.svg)](https://godoc.org/github.com/andoma-go/go-cache)
-[![Go Report Card](https://goreportcard.com/badge/github.com/andoma-go/go-cache)](https://goreportcard.com/report/github.com/andoma-go/go-cache)
-[![GitHub license](https://img.shields.io/github/license/andoma-go/go-cache.svg)](https://github.com/andoma-go/go-cache/blob/master/LICENSE)
+[![Run Tests](https://github.com/miihael/go-cache/actions/workflows/test.yml/badge.svg?branch=master)](https://github.com/miihael/go-cache/actions/workflows/test.yml)
+[![GoDoc](https://godoc.org/github.com/miihael/go-cache?status.svg)](https://godoc.org/github.com/miihael/go-cache)
+[![Go Report Card](https://goreportcard.com/badge/github.com/miihael/go-cache)](https://goreportcard.com/report/github.com/miihael/go-cache)
+[![GitHub license](https://img.shields.io/github/license/miihael/go-cache.svg)](https://github.com/miihael/go-cache/blob/master/LICENSE)
 
 go-cache is an in-memory key:value store/cache similar to memcached that is
 suitable for applications running on a single machine. Its major advantage is
@@ -20,14 +20,14 @@ one) to recover from downtime quickly. (See the docs for `NewFrom()` for caveats
 
 ### Installation
 
-`go get github.com/andoma-go/go-cache/v2`
+`go get github.com/miihael/go-cache/v2`
 
 ### Usage
 
 ```go
 import (
 	"fmt"
-	"github.com/andoma-go/go-cache/v2"
+	"github.com/miihael/go-cache/v2"
 	"time"
 )
 
