@@ -1068,6 +1068,18 @@ func (c *cache) Flush() {
 	c.mu.Unlock()
 }
 
+// Stop janitor forcefully
+func (C *Cache) Stop() {
+	C.cache.mu.Lock()
+	defer C.cache.mu.Unlock()
+	if C.cache.janitor == nil {
+		return
+	}
+	stopJanitor(C)
+	runtime.SetFinalizer(C, nil)
+	C.cache.janitor = nil
+}
+
 type janitor struct {
 	Interval time.Duration
 	stop     chan bool

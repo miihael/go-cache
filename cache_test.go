@@ -3,7 +3,9 @@ package cache
 import (
 	"bytes"
 	"io/ioutil"
+	"os"
 	"runtime"
+	"runtime/pprof"
 	"strconv"
 	"sync"
 	"testing"
@@ -1222,6 +1224,33 @@ func TestDecrementUnderflowUint(t *testing.T) {
 	if uint8 != 255 {
 		t.Error("uint8 did not underflow as expected; value:", uint8)
 	}
+}
+
+func TestStop(t *testing.T) {
+	tc := New(time.Millisecond, time.Millisecond*300)
+	tc.Set("foo", 3, DefaultExpiration)
+	if tc.onEvicted != nil {
+		t.Fatal("tc.onEvicted is not nil")
+	}
+	works := false
+	tc.OnEvicted(func(k string, v any) {
+		if k == "foo" && v.(int) == 3 {
+			works = true
+		}
+	})
+	t.Log("before stop")
+	pprof.Lookup("goroutine").WriteTo(os.Stdout, 1)
+	time.Sleep(time.Second)
+	if !works {
+		t.Error("onEvicted was not called")
+	}
+	tc.Stop()
+	time.Sleep(time.Millisecond * 100)
+	if tc.cache.janitor != nil {
+		t.Error("janitor was not stopped")
+	}
+	t.Log("after stop")
+	pprof.Lookup("goroutine").WriteTo(os.Stdout, 1)
 }
 
 func TestOnEvicted(t *testing.T) {
